@@ -8,6 +8,10 @@ df = mtcars %>%
 db_1 = read_excel("db_test_git.xlsx")
 
 # plot
-df %>% 
+plot = df %>% 
   ggplot(aes(x = mpg, y = hp, color = carb)) +
   geom_point()
+
+# export
+
+ggsave(plot,"scatter.png", width = 7, height = 5)
